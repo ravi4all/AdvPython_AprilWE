@@ -122,15 +122,35 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         buttons = [self.pushButton, self.pushButton_2,self.pushButton_3, self.pushButton_4,
                    self.pushButton_5, self.pushButton_6, self.pushButton_7, self.pushButton_8,
-                   self.pushButton_9, self.pushButton_10, self.pushButton_11, self.pushButton_12,
-                   self.pushButton_13, self.pushButton_14]
+                   self.pushButton_9, self.pushButton_10]
+        oprs = [ self.pushButton_11, self.pushButton_12,self.pushButton_13, self.pushButton_14]
 
         for i in range(len(buttons)):
-            buttons[i].clicked.connect(self.calc)
+            buttons[i].clicked.connect(self.numbers)
 
-    def calc(self):
+        for i in range(len(oprs)):
+            oprs[i].clicked.connect(self.operators)
+
+    def numbers(self):
         btn = self.sender()
+        num = btn.text()
 
+        self.value = self.lineEdit.text()
+        self.value += num
+        self.lineEdit.setText(self.value)
+
+    def operators(self):
+        btn = self.sender()
+        opr = btn.text()
+        oprs = ['+','-','/','*']
+        lastIndex = self.lineEdit.text()[-1]
+        if lastIndex != opr:
+            self.lineEdit.setText(self.value + opr)
+            return
+        for i in range(len(oprs)):
+            if oprs[i] == lastIndex:
+                self.lineEdit.setText(self.value + opr)
+                break
 
 
 if __name__ == "__main__":
