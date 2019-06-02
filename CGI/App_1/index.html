@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- emmet -->
+    <h1>This is my first html page</h1>
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <form action="cgi-bin/register.py" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label for="username">Enter Name</label>
+                    </td>
+                    <td>
+                        <input type="text" required placeholder="Enter name" name="u_name" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="usermail">Enter Email</label>
+                    </td>
+                    <td>
+                        <input type="email" required placeholder="Enter Email" id="usermail" name="u_mail">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="userpwd">Enter Password</label>
+                    </td>
+                    <td>
+                        <input type="password" placeholder="Enter Password" required name="u_pwd" id="userpwd">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select Gender
+                    </td>
+                    <td>
+                        <input type="radio" id="m" name="gender" value="male"> <label for="m">Male</label>
+                        <input type="radio" id="f" name="gender" value="female"> <label for="f">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="city">Select City</label>
+                    </td>
+                    <td>
+                        <select name="usercity" id="city">
+                            <option value="del">Delhi</option>
+                            <option value="mum">Mumbai</option>
+                            <option value="pune">Pune</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset">
+                    </td>
+                    <td>
+                        <input type="submit" value="Register">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+
+</body>
+</html>
